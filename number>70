@@ -1,0 +1,9 @@
+#Prompt for a number. If the number is greater than 70, print PASSING, otherwise, print NOT PASSING.
+
+puts "Enter a number"
+ num = gets.chomp.to_i
+ if num > 70
+     print "Passing"
+ else
+     print "Not Passing"
+end
