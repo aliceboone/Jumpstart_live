@@ -1,0 +1,18 @@
+# Prompt for a string. If the string is equal to green, print GO, otherwise, print STOP.
+
+# Example out put 
+# Enter a string  ==> green
+# GO
+# Enter a string  ==> Green
+# STOP
+# Enter a string  ==> red
+# STOP
+
+puts "Enter a string"
+string = gets.chomp
+ 
+if string == "green"
+    print "GO"
+else
+    print "STOP"
+end
