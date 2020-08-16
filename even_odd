@@ -1,0 +1,10 @@
+# Prompt for a number. If the number is even, print EVEN, otherwise, print ODD.
+
+puts "Enter a number"
+num = gets.chomp.to_i
+
+if num %2 == 0
+    print "EVEN"
+else
+    print "ODD"
+end
