@@ -1,19 +1,38 @@
 # Define the variables
 
 candidate = 0
-vote = 1
+vote = 0
 donald_duck = 0
 minnie_mouse = 0
 goofy = 0
+new_candidate = 0
 
 # Information to the user about election and candidates
 
 puts "Welcome to my election vote program!"
-puts "Election candidates are: Donald Duck, Minnie Mouse, Goofy"
+
+puts "Indicate number of voters"
+      voters = gets.chomp.to_i
+
+array_candidates = ["Donald Duck", "Minnie Mouse", "Goofy"]
+
+puts "Election candidates are: #{array_candidates} type the name of candidate you want to vote"
+
+puts "Do you want to add a new candidate"
+add_new = gets.chomp
+
+if add_new == "yes"
+  puts "Add the new candidate name"
+  new_candidate = gets.chomp.to_s
+  array_candidates << new_candidate
+  puts "Election candidates are: #{array_candidates} type the name of candidate you want to vote"
+else 
+  puts "Election candidates are: #{array_candidates} type the name of candidate you want to vote"
+end
 
 # Imput user vote
 
-(1..10).each do|candidate| 
+(1..voters).each do|candidate| 
   candidate = gets.chomp.downcase
   vote += 1
   puts "Vote # #{vote}: <#{candidate}>"
@@ -34,6 +53,22 @@ end
 puts "RESULTS...."
 
 puts "Votes Summary:"
+
+  puts "Donald Duck - #{donald_duck} votes(s)"
+  puts "Minnie Mouse - #{minnie_mouse} votes(s)"
+  puts "Goofy - #{goofy} votes(s)"
+
+# Define the winner
+
+if donald_duck > minnie_mouse && donald_duck > goofy
+  puts "Donald Duck is the winner"
+  elsif minnie_mouse > donald_duck  && minnie_mouse > goofy
+     puts "Minnie Mouse is the winner"
+  elsif goofy > donald_duck && goofy > minnie_mouse
+ puts "Goofy is the winner"
+  else goofy == minnie_mouse || goofy == donald_duck || donald_duck == minnie_mouse
+  puts "There has been a tie"
+  end
 
   puts "Donald Duck - #{donald_duck} votes(s)"
   puts "Minnie Mouse - #{minnie_mouse} votes(s)"
