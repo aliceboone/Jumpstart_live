@@ -1,31 +1,35 @@
-puts "Welcome to my election vote program!"
-
-puts "Election candidates are: Donald Duck, Minnie Mouse, Goofy"
+# Define the variables
 
 candidate = 0
-# result = 0
-# vote = 0
+vote = 1
 donald_duck = 0
 minnie_mouse = 0
 goofy = 0
-vote = 0
+
+# Information to the user about election and candidates
+
+puts "Welcome to my election vote program!"
+puts "Election candidates are: Donald Duck, Minnie Mouse, Goofy"
+
+# Imput user vote
 
 (1..10).each do|candidate| 
   candidate = gets.chomp.downcase
-  # vote = vote + 1
+  vote += 1
   puts "Vote # #{vote}: <#{candidate}>"
 
+# Check candidates and add votes to them
+
 if candidate == "donald duck" 
-		donald_duck = donald_duck + 1
+  donald_duck = donald_duck + 1
 elsif candidate == "minnie mouse" 
-		minnie_mouse = minnie_mouse + 1
-else candidate == "goofy"
+  minnie_mouse = minnie_mouse + 1
+elsif candidate == "goofy"
   goofy = goofy + 1
-# else "Not a valid candidate"
 end
- vote += 1
 end
 
+# Show the election results
 
 puts "RESULTS...."
 
@@ -41,6 +45,9 @@ if donald_duck > minnie_mouse && donald_duck > goofy
   puts "Donald Duck is the winner"
   elsif minnie_mouse > donald_duck  && minnie_mouse > goofy
      puts "Minnie Mouse is the winner"
-  else goofy > donald_duck && goofy > minnie_mouse
+  elsif goofy > donald_duck && goofy > minnie_mouse
  puts "Goofy is the winner"
+  else goofy == minnie_mouse || goofy == donald_duck || donald_duck == minnie_mouse
+  puts "There has been a tie"
   end
+
