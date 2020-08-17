@@ -1,44 +1,31 @@
 # Define the variables
-
 candidate = 0
 vote = 0
 donald_duck = 0
 minnie_mouse = 0
 goofy = 0
-new_candidate = 0
 
 # Information to the user about election and candidates
-
 puts "Welcome to my election vote program!"
 
+# Input number of Voters
 puts "Indicate number of voters"
-      voters = gets.chomp.to_i
+voters = gets.chomp.to_i
 
+# Create array to store candidates name
 array_candidates = ["Donald Duck", "Minnie Mouse", "Goofy"]
 
-puts "Election candidates are: #{array_candidates} type the name of candidate you want to vote"
+# Display the array
+puts "Election candidates are: #{array_candidates}"
+puts "Type the name of candidate you want to vote"
 
-puts "Do you want to add a new candidate"
-add_new = gets.chomp
-
-if add_new == "yes"
-  puts "Add the new candidate name"
-  new_candidate = gets.chomp.to_s
-  array_candidates << new_candidate
-  puts "Election candidates are: #{array_candidates} type the name of candidate you want to vote"
-else 
-  puts "Election candidates are: #{array_candidates} type the name of candidate you want to vote"
-end
-
-# Imput user vote
-
+# Input user vote
 (1..voters).each do|candidate| 
   candidate = gets.chomp.downcase
   vote += 1
   puts "Vote # #{vote}: <#{candidate}>"
 
 # Check candidates and add votes to them
-
 if candidate == "donald duck" 
   donald_duck = donald_duck + 1
 elsif candidate == "minnie mouse" 
@@ -49,40 +36,19 @@ end
 end
 
 # Show the election results
-
 puts "RESULTS...."
-
 puts "Votes Summary:"
-
   puts "Donald Duck - #{donald_duck} votes(s)"
   puts "Minnie Mouse - #{minnie_mouse} votes(s)"
   puts "Goofy - #{goofy} votes(s)"
 
-# Define the winner
-
+#Define the winner
 if donald_duck > minnie_mouse && donald_duck > goofy
-  puts "Donald Duck is the winner"
-  elsif minnie_mouse > donald_duck  && minnie_mouse > goofy
-     puts "Minnie Mouse is the winner"
-  elsif goofy > donald_duck && goofy > minnie_mouse
- puts "Goofy is the winner"
-  else goofy == minnie_mouse || goofy == donald_duck || donald_duck == minnie_mouse
+  puts " Donald Duck is the winner "
+elsif minnie_mouse > donald_duck && minnie_mouse > goofy
+  puts "Minnie Mouse is the winner "
+elsif goofy > donald_duck && goofy > minnie_mouse 
+  puts "Goofy is the winner"
+else goofy == minnie_mouse || goofy == donald_duck ||  goofy == new_candidate || minnie_mouse == donald_duck || minnie_mouse == new_can
   puts "There has been a tie"
-  end
-
-  puts "Donald Duck - #{donald_duck} votes(s)"
-  puts "Minnie Mouse - #{minnie_mouse} votes(s)"
-  puts "Goofy - #{goofy} votes(s)"
-
-# Define the winner
-
-if donald_duck > minnie_mouse && donald_duck > goofy
-  puts "Donald Duck is the winner"
-  elsif minnie_mouse > donald_duck  && minnie_mouse > goofy
-     puts "Minnie Mouse is the winner"
-  elsif goofy > donald_duck && goofy > minnie_mouse
- puts "Goofy is the winner"
-  else goofy == minnie_mouse || goofy == donald_duck || donald_duck == minnie_mouse
-  puts "There has been a tie"
-  end
-
+end
