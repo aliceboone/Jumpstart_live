@@ -1,0 +1,46 @@
+puts "Welcome to my election vote program!"
+
+puts "Election candidates are: Donald Duck, Minnie Mouse, Goofy"
+
+candidate = 0
+# result = 0
+# vote = 0
+donald_duck = 0
+minnie_mouse = 0
+goofy = 0
+vote = 0
+
+(1..10).each do|candidate| 
+  candidate = gets.chomp.downcase
+  # vote = vote + 1
+  puts "Vote # #{vote}: <#{candidate}>"
+
+if candidate == "donald duck" 
+		donald_duck = donald_duck + 1
+elsif candidate == "minnie mouse" 
+		minnie_mouse = minnie_mouse + 1
+else candidate == "goofy"
+  goofy = goofy + 1
+# else "Not a valid candidate"
+end
+ vote += 1
+end
+
+
+puts "RESULTS...."
+
+puts "Votes Summary:"
+
+  puts "Donald Duck - #{donald_duck} votes(s)"
+  puts "Minnie Mouse - #{minnie_mouse} votes(s)"
+  puts "Goofy - #{goofy} votes(s)"
+
+# Define the winner
+
+if donald_duck > minnie_mouse && donald_duck > goofy
+  puts "Donald Duck is the winner"
+  elsif minnie_mouse > donald_duck  && minnie_mouse > goofy
+     puts "Minnie Mouse is the winner"
+  else goofy > donald_duck && goofy > minnie_mouse
+ puts "Goofy is the winner"
+  end
